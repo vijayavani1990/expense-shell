@@ -19,5 +19,6 @@ dnf install mysql -y
 mysql -h mysql.vijayavanimanju.online -uroot -pExpenseApp@1 < /app/schema/backend.sql
 
 systemctl daemon-reload
+
 systemctl enable backend
 systemctl start backend
