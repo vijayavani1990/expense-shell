@@ -32,12 +32,15 @@ else
   echo -e "\e[31m FAILURE"
 fi
 
-echo -e "${color} Create user named expense for Application\e[0m"
-useradd expense &>>/tmp/backend.log
-if [ $? -eq 0 ]; then
-  echo -e "\e[32m SUCESS"
-else
-  echo -e "\e[31m FAILURE"
+id expense &>>/tmp/backend.log
+if [ $? -ne 0 ]; then
+  echo -e "${color} Create user named expense for Application\e[0m"
+  useradd expense &>>/tmp/backend.log
+  if [ $? -eq 0 ]; then
+    echo -e "\e[32m SUCESS"
+  else
+    echo -e "\e[31m FAILURE"
+  fi
 fi
 
 echo -e "${color} Create directory called app for Application \e[0m"
