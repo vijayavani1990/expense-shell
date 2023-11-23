@@ -1,5 +1,5 @@
 log_file=/tmp/expense.log
-blue=\e[34m
+blue="\e[34m"
 
 echo -e "${blue} Installing Nginx \e[0m"
 dnf install nginx -y &>>$log_file
