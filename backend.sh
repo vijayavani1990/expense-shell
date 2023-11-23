@@ -16,7 +16,7 @@ unzip /tmp/backend.zip
 npm install
 
 dnf install mysql -y
-mysql -h mysql.vijayavanimanju.online -uroot -pExpenseApp@1 < /app/schema/backend.sql
+mysql -h mysql-dev.vijayavanimanju.online -uroot -pExpenseApp@1 < /app/schema/backend.sql
 
 systemctl daemon-reload
 systemctl enable backend
