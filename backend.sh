@@ -43,12 +43,14 @@ if [ $? -ne 0 ]; then
   fi
 fi
 
-echo -e "${color} Create directory called app for Application \e[0m"
-mkdir /app &>>/tmp/backend.log
-if [ $? -eq 0 ]; then
-  echo -e "\e[32m SUCESS"
-else
-  echo -e "\e[31m FAILURE"
+if [ ! -d /app ]; then
+  echo -e "${color} Create directory called app for Application \e[0m"
+  mkdir /app &>>/tmp/backend.log
+  if [ $? -eq 0 ]; then
+    echo -e "\e[32m SUCESS"
+  else
+    echo -e "\e[31m FAILURE"
+  fi
 fi
 
 echo -e "${color} Download backend application content \e[0m"
