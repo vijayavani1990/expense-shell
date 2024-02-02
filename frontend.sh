@@ -22,8 +22,10 @@ status_check
 unzip /tmp/frontend.zip &>>$log_file
 status_check
 
-echo -e "${blue} Restart Nginx service \e[0m"
+echo -e "${blue} Enable Nginx service \e[0m"
 systemctl enable nginx &>>$log_file
 status_check
+
+echo -e "${blue} Restart Nginx service \e[0m"
 systemctl restart nginx &>>$log_file
 status_check
